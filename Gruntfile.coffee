@@ -8,12 +8,12 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          'lobster.js': 'lobster.coffee'
-          'doc/welcome/landing-page.js': 'doc/welcome/landing-page.coffee'
+          'lobstertrap.js': 'lobstertrap.coffee'
+          'doc/example.js': 'doc/example.coffee'
 
     watch:
       coffee:
-        files: ['lobster.coffee', 'docs/welcome/landing-page.coffee', 'docs/sass/*']
+        files: ['lobstertrap.coffee', 'docs/example/landing-page.coffee', 'docs/sass/*']
         tasks: ["coffee", "uglify", "compass"]
 
     uglify:
@@ -21,18 +21,25 @@ module.exports = (grunt) ->
         banner: "/*! <%= pkg.name %> <%= pkg.version %> */\n"
 
       dist:
-        src: 'lobster.js'
-        dest: 'lobster.min.js'
+        src: 'src/lobstertrap.js'
+        dest: 'lobstertrap.min.js'
 
-    compass:
-      dist:
-        options:
-          sassDir: 'sass'
-          cssDir: 'themes'
+    # compass:
+    #   dist:
+    #     options:
+    #       sassDir: 'sass'
+    #       cssDir: 'themes'
+
+    haml:
+      doc:
+        language: "coffee"
+        src: "doc/example.haml"
+        dest: "doc/example.html"
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
-  grunt.loadNpmTasks 'grunt-contrib-compass'
+  # grunt.loadNpmTasks 'grunt-contrib-compass'
+  grunt.loadNpmTasks 'grunt-haml'
 
-  grunt.registerTask 'default', ['coffee', 'uglify', 'compass']
+  grunt.registerTask 'default', ['coffee', 'uglify', 'haml']
