@@ -9,7 +9,7 @@ module.exports = (grunt) ->
       compile:
         files:
           'lobster.js': 'lobster.coffee'
-          'docs/welcome/landing-page.js': 'docs/welcome/landing-page.coffee'
+          'doc/welcome/landing-page.js': 'doc/welcome/landing-page.coffee'
 
     watch:
       coffee:
