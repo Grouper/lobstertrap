@@ -6,4 +6,4 @@ spec/javascripts/*.js
 _*
 bower_components/
 components
-*.sublime-project
+*sublime-project
