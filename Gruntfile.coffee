@@ -13,8 +13,10 @@ module.exports = (grunt) ->
 
     watch:
       coffee:
-        files: ['lobstertrap.coffee', 'docs/example/landing-page.coffee', 'docs/sass/*']
-        tasks: ["coffee", "uglify", "compass"]
+        files: ["**/*.coffee", "**/*.haml","**/*.sass"]
+        tasks: ["default"]
+        options:
+          livereload: true
 
     uglify:
       options:
