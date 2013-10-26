@@ -49,13 +49,17 @@ class LobsterTrap
     @view.$el.modal('toggle')
 
 
-class LobsterTrapView extends Backbone.View
+class LobsterTrapView
   template: JST["backbone/templates/lobster_trap"]
 
   events:
     'click .close' : 'hide'
 
-  initialize: ->
+  constructor: ->
+    @$el = $('#lobstertrap-modal')
+    @$el.find('.close').click =>
+      @$el.modal('hide')
+      
 
   render: =>
     params =
@@ -65,6 +69,5 @@ class LobsterTrapView extends Backbone.View
     return this
 
   hide: =>
-    @$el.modal('hide')
 
 window.lobster = new LobsterTrap

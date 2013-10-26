@@ -1,0 +1,12 @@
+
+.modal-header
+  %h3
+    Keyboard Shortcuts
+    %button.close{'type' => button, 'data-dismiss' => 'modal'} ×
+
+.modal-body
+  .row
+    .span2.key
+      %code
+        =shortcut_pair[0]
+    .span3.description<>=shortcut_pair[1]
