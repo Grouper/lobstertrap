@@ -1,1 +1,8 @@
 *.html
+*.swp
+.DS_Store
+node_modules/
+spec/javascripts/*.js
+_*
+bower_components/
+components
