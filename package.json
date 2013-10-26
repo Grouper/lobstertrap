@@ -1,7 +1,7 @@
 {
   "name": "lobstertrap",
   "version": "0.0.1",
-  "description": "Transition numbers with ease",
+  "description": "Discoverable Keyboard Shortcuts",
   "authors": ["Tom Brown <tom@joingrouper.com>"],
   "scripts": {
     "test": "grunt test --verbose"
